@@ -1,7 +1,10 @@
 package com.nuuwski.tictactoe;
 
 import javafx.application.Application;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Ellipse;
@@ -19,6 +22,21 @@ public class TicTacToeApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+        GridPane pane = new GridPane();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j< 3; j++) {
+                pane.add(cell[i][j] = new Cell(), j, i);
+            }
+        }
+
+        BorderPane borderPane = new BorderPane();
+        borderPane.setCenter(pane);
+        borderPane.setBottom(lblStatus);
+
+        Scene scene = new Scene(borderPane, 450, 170);
+        stage.setScene(scene);
+        stage.setTitle("TicTacToe");
+        stage.show();
     }
 
     public class Cell extends Pane {
