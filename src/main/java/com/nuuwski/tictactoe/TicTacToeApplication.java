@@ -112,6 +112,20 @@ public class TicTacToeApplication extends Application {
                 return true;
             }
 
+            if (cell[0][0].getToken() ==  token && cell[0][1].getToken() == token && cell[0][2].getToken() == token) {
+                return true;
+            }
+
+            if (cell[0][0].getToken() ==  token && cell[1][0].getToken() == token && cell[2][0].getToken() == token) {
+                return true;
+            }
+            if (cell[0][1].getToken() ==  token && cell[1][1].getToken() == token && cell[2][1].getToken() == token) {
+                return true;
+            }
+            if (cell[0][2].getToken() ==  token && cell[1][2].getToken() == token && cell[2][2].getToken() == token) {
+                return true;
+            }
+
             return false;
 
         }
